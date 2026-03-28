@@ -2,7 +2,7 @@
 
 ## 🚀 Live Demo
 
-👉 <<put later link here of deployed >>
+👉 <<https://sketch-based-image-retrieval.streamlit.app/>>
 
 ---
 
