@@ -49,7 +49,12 @@ def retrieve(query_img, top_k=5):
 
 # ---------------- UI ----------------
 st.title("🖊️ Sketch-Based Image Retrieval")
+st.markdown("Upload a sketch or edge image to retrieve visually similar images using deep learning and Spark.")
 
+
+
+
+st.info("Note: This demo uses a small sample dataset for fast performance.")
 uploaded_file = st.file_uploader("Upload a sketch (or edge image)", type=["png", "jpg"])
 
 if uploaded_file:
@@ -86,7 +91,15 @@ if uploaded_file:
         except Exception:
             st.warning("Evaluation module not available in deployed version.")
 
-
+with st.expander("ℹ️ How this works"):
+    st.write("""
+    - Images are converted to edge representations
+    - A CNN (ResNet18) extracts feature embeddings
+    - Cosine similarity is used to find similar images
+    - Apache Spark enables scalable processing
+    """)
+st.markdown("---")
+st.markdown("Built by Mohammed Abdul Rafe Sajid 🚀")
 # import streamlit as st
 # import numpy as np
 # import cv2
